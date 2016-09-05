@@ -25,7 +25,7 @@ func Get(httpUrl string, httpParams string) (respBody string, respHttpcode int, 
 		return
 	}
 
-	respHttpcode := resp.StatusCode
+	respHttpcode = resp.StatusCode
 
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
@@ -33,7 +33,7 @@ func Get(httpUrl string, httpParams string) (respBody string, respHttpcode int, 
 	}
 	defer resp.Body.Close()
 
-	respBody := string(body)
+	respBody = string(body)
 
 	return
 
